@@ -9,6 +9,7 @@ import (
 
 type Hasher struct {
 	h1     uint32
+	isDone bool
 	shift  int
 	length int
 	buffer uint64
@@ -79,6 +80,11 @@ func (h *Hasher) PutString(s string) interfaces.Hasher {
 }
 
 func (h *Hasher) Hash() hashcode.HashCode {
+	if h.isDone {
+		panic("禁止重复调用hash()方法")
+	}
 	h.h1 ^= mixK1(uint32(h.buffer))
-	return fmix(h.h1, h.length)
+	hashCode := fmix(h.h1, h.length)
+	h.isDone = true
+	return hashCode
 }
