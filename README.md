@@ -5,10 +5,16 @@
 [ ok ] murmur3_32  
 [  ] murmur3_128
 
+- 安装包
+
+```shell
+go get github.com/keyto1995/hashing
+```
+
 - 导入包
 
 ``` go
-import "keyto1995/hashing"
+import "github.com/keyto1995/hashing"
 ```
 
 - `HashFunction` 是单纯的、无状态的方法，它把任意的数据块映射到固定数目的位指，并且保证相同的输入一定产生相同的输出，不同的输入尽可能产生不同的输出。 
