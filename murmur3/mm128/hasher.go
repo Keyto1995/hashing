@@ -175,7 +175,7 @@ func (h *Hasher) PutUint32(i uint32) interfaces.Hasher {
 }
 
 func (h *Hasher) PutUint64(i uint64) interfaces.Hasher {
-	b := make([]byte, 4)
+	b := make([]byte, 8)
 	binary.LittleEndian.PutUint64(b, i)
 	h.update(b)
 	return h
