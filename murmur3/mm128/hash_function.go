@@ -18,6 +18,10 @@ type HashFunction struct {
 	seed uint32
 }
 
+func NewHashFunction(seed uint32) interfaces.HashFunction {
+	return &HashFunction{seed: seed}
+}
+
 func (hf *HashFunction) NewHasher() interfaces.Hasher {
 	return NewHasher(hf.seed)
 }

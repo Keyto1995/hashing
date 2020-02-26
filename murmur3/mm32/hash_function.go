@@ -13,7 +13,7 @@ const (
 	c2 uint32 = 0x1b873593
 )
 
-func NewHashFunction(seed uint32) *HashFunction {
+func NewHashFunction(seed uint32) interfaces.HashFunction {
 	return &HashFunction{seed: seed}
 }
 
