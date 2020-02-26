@@ -84,7 +84,7 @@ func (h *Hasher) Hash() hashcode.HashCode {
 		panic("禁止重复调用hash()方法")
 	}
 	h.h1 ^= mixK1(uint32(h.buffer))
-	hashCode := fmix(h.h1, h.length)
+	hash := fmix(h.h1, h.length)
 	h.isDone = true
-	return hashCode
+	return hashcode.NewUint32HashCode(hash)
 }
