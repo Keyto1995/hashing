@@ -28,7 +28,8 @@ hashCode := hashFunction.HashString("hello, world")
 
 ``` go
 hasher := hashing.Murmur32().NewHasher()
-hasher.PutString("hello").PutByte(byte(',')).PutString(" world")
+hasher.PutString("hello").PutByte(byte(','))
+hasher.PutString(" world")
 hashCode := hasher.Hash()
 ```
 
