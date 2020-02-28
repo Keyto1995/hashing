@@ -14,6 +14,9 @@ const (
 	c2        uint64 = 0x4cf5ad432745937f
 )
 
+// Zhf seed为0的HashFunction
+var Zhf = NewHashFunction(0)
+
 type HashFunction struct {
 	seed uint32
 }

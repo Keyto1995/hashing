@@ -13,6 +13,9 @@ const (
 	c2 uint32 = 0x1b873593
 )
 
+// Zhf seed为0的HashFunction
+var Zhf = NewHashFunction(0)
+
 func NewHashFunction(seed uint32) interfaces.HashFunction {
 	return &HashFunction{seed: seed}
 }

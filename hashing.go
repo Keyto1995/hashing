@@ -8,10 +8,10 @@ import (
 
 // Murmur32 获得murmur3_32的hashfunction
 func Murmur32() interfaces.HashFunction {
-	return mm32.NewHashFunction(0)
+	return mm32.Zhf
 }
 
 // Murmur128 获得murmur3_128的hashfunction
 func Murmur128() interfaces.HashFunction {
-	return mm128.NewHashFunction(0)
+	return mm128.Zhf
 }
